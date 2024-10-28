@@ -49,11 +49,11 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: /Users/aait-lfd/data/db/
+      device: /home/codespace/data/db/
 
   wordpress:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: /Users/aait-lfd/data/wordpress/
+      device: /home/codespace/data/wordpress/

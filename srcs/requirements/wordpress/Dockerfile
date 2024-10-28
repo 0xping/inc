@@ -3,7 +3,7 @@ FROM debian:bullseye
 
 
 # Update the package list, upgrade installed packages, and install PHP-FPM, PHP-MySQL, and WP-CLI
-RUN apt update && apt install -y curl php7.4-fpm php7.4-mysql
+RUN apt update && apt install -y curl php7.4-fpm php7.4-mysql sendmail
 
 RUN curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
 RUN chmod +x wp-cli.phar

@@ -3,10 +3,11 @@
 sleep 5  # Initial sleep for MariaDB to start up properly
 
 # Wait for MariaDB to be available
-until mariadb -h mariadb -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" -e "SHOW DATABASES;" 2>/dev/null; do
-    echo "Waiting for MariaDB..."
-    sleep 2
-done
+# until mariadb -h mariadb -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" -e "SHOW DATABASES;" 2>/dev/null; do
+#     echo "Waiting for MariaDB..."
+#     echo $MYSQL_USER  $MYSQL_PASSWORD
+#     sleep 2
+# done
 
 echo "MariaDB is available."
 

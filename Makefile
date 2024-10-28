@@ -8,6 +8,6 @@ fclean:
 	-docker network rm $$(docker network ls -q) 2> /dev/null
 	-docker volume rm $$(docker volume ls -q)
 	-docker system prune -a y
-	rm -rf ~/data/wordpress/* ~/data/db/*
+	sudo rm -rf ~/data/wordpress/* ~/data/db/*
 
 re : fclean all
