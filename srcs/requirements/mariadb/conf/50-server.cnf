@@ -1,5 +1,5 @@
-[server]
 [mysqld]
+log_error = /var/log/mysql/error.log
 user = mysql
 basedir = /usr
 datadir = /var/lib/mysql
