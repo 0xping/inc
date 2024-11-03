@@ -1,14 +1,13 @@
 server
 {
     listen 443 ssl;
+    server_name localhost ${LOGIN}.42.fr;
 
-    server_name ${LOGIN}.42.fr localhost;
-
-    root /var/www/html/;
+	root /var/www/html;
 
     ssl_certificate ${CERTS};
     ssl_certificate_key ${CERTS_KEY};
-    ssl_protocols TLSv1.2 ;
+    ssl_protocols TLSv1.3;
 
     index index.php;
 
@@ -21,8 +20,7 @@ server
     location ~ \.php$
     {
         fastcgi_pass wordpress:9000;
-        fastcgi_index index.php;
         include fastcgi.conf;
-        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name; #root+filename
     }
 }

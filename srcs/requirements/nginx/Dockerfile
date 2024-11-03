@@ -1,7 +1,7 @@
 FROM debian:bullseye
 
 # Update the package list, upgrade installed packages, and install NGINX and OpenSSL
-RUN apt update -y && apt install -y nginx openssl gettext
+RUN apt update -y && apt install --no-install-recommends -y nginx openssl gettext
 
 # Create directories for certificates
 RUN mkdir -p /etc/ssl/certs /etc/ssl/private

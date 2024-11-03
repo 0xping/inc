@@ -7,10 +7,9 @@ services:
       - .env
     volumes:
       - wordpress:/var/www/html/
-    depends_on:
-      - mariadb
     networks:
       - inception-net
+    restart: always
 
   nginx:
     build: ./requirements/nginx/
@@ -22,8 +21,6 @@ services:
       - wordpress:/var/www/html/
     ports:
       - 443:443
-    depends_on:
-      - wordpress
     networks:
       - inception-net
     restart: always
@@ -36,23 +33,21 @@ services:
       - .env
     volumes:
       - db:/var/lib/mysql/
-
     networks:
       - inception-net
+    restart: always
 
 networks:
   inception-net:
 
 volumes:
   db:
-    driver: local
     driver_opts:
       type: none
       o: bind
       device: /home/aait-lfd/data/db/
 
   wordpress:
-    driver: local
     driver_opts:
       type: none
       o: bind
